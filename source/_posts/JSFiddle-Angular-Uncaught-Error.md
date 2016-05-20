@@ -50,6 +50,28 @@ var n = 100;
 
 ```
 
+由于onload事件是在所有资源全部加载完成后才会执行，而Angular是在DOM加载完成后就会去执行的，因此像下面的代码就会报错：
+
+``` javascript
+//<![CDATA[
+window.onload=function(){
+  angular.module('MyApp',[]);
+}//]]>
+```
+
+同样的，放在DOMContentLoaded中也是不行的：
+
+``` javascript
+//<![CDATA[
+document.addEventListener("DOMContentLoaded", function(){
+    angular.module('MyApp',[]);
+}, false)//]]>
+```
+
+之所以会这样，原因就是，在Angular中，也有一个用来监听DOMContentLoaded的事件，在这个事件中会执行一些初始化操作(`angularInit`)，它会去遍历寻找`ng-app`，并且会`启动(bootstrap)`一个angular应用。
+
+正是在这个过程中，无论把创建module的代码放在onload或是自定义的DOMContentLoaded事件中，`angularInit`都无法找到MyApp这个module，因此就报了上面的错误。
+
 
 
 
