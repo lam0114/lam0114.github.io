@@ -71,3 +71,6 @@ deploy:
   type: git
   repo: git@github.com:lam0114/lam0114.github.io
   branch: master
+
+marked:
+  smartypants: false
