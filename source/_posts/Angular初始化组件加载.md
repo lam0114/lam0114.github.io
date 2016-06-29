@@ -44,9 +44,9 @@ if (appElement) {
 }
 ```
 
-在这个方法中，会遍历`ngAttrPrefixes`，它是一个数组，包含了`ng-、data-ng－、ng:、x-ng-`，然后通过拼接字符串'app'去获取appElement并且得到这个module。
+在这个方法中，会遍历`ngAttrPrefixes`，它是一个数组，包含了`ng-、data-ng－、ng:、x-ng-`，然后通过拼接字符串app去获取appElement并且得到这个module。
 
-比如在html标签上加了ng-app='MyApp'这个属性，那么Angular在执行的时候会通过element.querySelector获取到html元素，并且得到了MyApp这个module，最后通过bootstrap方法启动整个应用程序。
+比如在html标签上加了`ng-app='MyApp'`这个属性，那么Angular在执行的时候会通过element.querySelector获取到html元素，并且得到了MyApp这个module，最后通过bootstrap方法启动整个应用程序。
 
 `bootstrap`方法是用来启动一个Angular程序，一般很少会用到，除非你想自己控制初始化的过程。
 
