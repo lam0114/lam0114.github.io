@@ -5,7 +5,7 @@
  * @version 2.0
  * @link http://chopstack.com
  */
-* {
+*:not('pre span') {
   font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", 'Arial', sans-serif;
 }
 
