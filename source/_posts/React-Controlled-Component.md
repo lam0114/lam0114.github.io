@@ -67,7 +67,7 @@ A controlled component does not maintain its own internal state; the component r
 
 ### Uncontrolled组件
 
-不带value属性的input就是一个uncontolled组件，你的任何输入都会作用到该组件上，如果想监听value值的变化，你只需添加一个onChange属性。
+不带value属性（或者值为null）的input就是一个uncontolled组件，你的任何输入都会作用到该组件上，如果想监听value值的变化，你只需添加一个onChange属性。
 
 ```  javascript
 render: function() {
