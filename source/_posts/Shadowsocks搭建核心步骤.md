@@ -25,7 +25,7 @@ pip install shadowsocks
     "local_port":1080,
     "password":"yourpassword", // 设置密码
     "timeout":600,
-    "method":"rc4-md5"
+    "method":"aes-256-cfb"
 }
 ```
 3. `vi /etc/supervisord.conf`，尾部加入```
@@ -34,7 +34,9 @@ command=ssserver -c /etc/shadowsocks.json
 autostart=true
 autorestart=true
 user=root
+＃ 文件尾部留出空行
 ```
+
 4. `vi /etc/rc.local`，然后加入`service supervisord start`，保存退出
 5. `reboot`
 
